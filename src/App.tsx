@@ -1,27 +1,21 @@
-import React, { useEffect } from 'react';
+import React from "react";
+import { RecoilRoot } from "recoil";
+import styled from "@emotion/styled"
+import TodoTemplate from "./templates/TodoTemplate";
 
-function App() {
-  
-  useEffect(() => {
-    console.log('Hello World')
-  }, [])
+const App: React.FC = () => {
 
   return (
-    <div>
-      <header>
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <RecoilRoot>
+        <h2>My Todos</h2>
+        <TodoTemplate />
+      </RecoilRoot>
+    </Container>
   );
 }
-
 export default App;
+
+const Container = styled.div`
+  display: flex;
+`
